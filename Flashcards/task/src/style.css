@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Palanquin:wght@400;600&display=swap');
+
+body {
+    background: url("https://wallpaperaccess.com/full/1989877.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.content-container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#task {
+    background: #fff;
+    text-align: center;
+    width: 50%;
+    border-radius: 10px;
+    margin: 20px auto 0;
+    font: 600 28px Palanquin;
+
+}
+
+.cards-block {
+    display: grid;
+    grid-template-rows: 200px 200px 200px;
+    grid-template-columns: 200px 200px 200px;
+    grid-gap: 50px;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    margin: 50px auto 0;
+    padding: 30px;
+}
+
+.card-container{
+    perspective: 1000px;
+}
+
+.card {
+    position: relative;
+    transition: all .9s ease;
+    transform-style: preserve-3d;
+}
+
+.front-side,
+.back-side {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    text-align: center;
+    font: 400 24px Palanquin;
+    line-height: 200px;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    cursor: pointer;
+}
+
+.front-side p,
+.back-side p{
+    margin: 0;
+}
+
+.front-side{
+    backface-visibility: hidden;
+    background: #4077c9;
+    z-index: 2;
+}
+
+.back-side{
+    background: #4c8dee;
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+
+.card:hover{
+    transform: rotateY(180deg);
+}
